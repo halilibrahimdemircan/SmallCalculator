@@ -1,0 +1,77 @@
+<div
+    class="card align-middle"
+    id="quickCalculatorModal"
+    style="max-width: ${leftColPos.width}px;margin-top: 4.5rem;"
+  >
+    <div class="card-header" style="background: none;">
+      <div class="row">
+      <div class="col">
+        <img
+        class="img-thumbnail"
+        src="${logoBlack}"
+        alt="Emparazon Logo"
+        style="border: none; width: 10rem; float: left;"
+        />
+      </div>
+      <div class="col-6 text-center" style="color:#d16800">
+        <h3>Hesaplama Aracı</h3>
+      </div>
+      <div class="col">
+        
+      </div>
+      </div>
+    </div>
+    <div class="container">
+      <form id="quickCalcForm">
+        <div class="row mb-1">
+          <div class="col-6">
+            <label style="color:#0087b8">Satış Fiyatı </label>
+          </div>
+          <div class="col-6">
+            <div class="input-group form-inline">
+              <input
+                name="quickCalcPrice"
+                type="number"
+                value="${price}"
+                class="calc-inputs"
+                min="0"
+                step="0.01"
+                class="form-control form-control-sm"
+              />
+              <span class="ml-1">${currencySign}</span>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-6">
+            <label style="color:#0087b8">Ürün Maliyeti</label>
+          </div>
+          <div class="col-6">
+            <div class="input-group form-inline">
+              <input
+                name="quickCalcUmc"
+                type="number"
+                value="${umc}"
+                class="calc-inputs"
+                min="0"
+                step="0.01"
+                class="form-control form-control-sm"
+              /><span class="ml-1">${currencySign}</span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row mb-1 shadow-none border-bottom border-bottom-secondary">
+        <div class="col-6">
+          <label style="color:#0087b8">Amazon Kesintileri</label>
+        </div>
+        <div id="quickCalcTotalCosts" class="col-6"></div>
+      </div>
+      <div class="row mb-1 shadow-none border-bottom border-bottom-secondary">
+        <div class="col-6">
+          <label style="color:#d16800"> NET KAR</label>
+        </div>
+        <div id="quickCalcNetRevenue" class="col-6"></div>
+      </div>
+    </div>
+  </div>
