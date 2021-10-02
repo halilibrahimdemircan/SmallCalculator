@@ -1,136 +1,122 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-  </head>
-  <body>
-    <div
-    class="card align-middle"
-    id="quickCalculatorModal"
-    style="max-width: ${leftColPos.width}px;margin-top: 4.5rem;"
-  >
-    <div class="card-header" style="background: none;">
-      <div class="row">
-      <div class="col">
-        <img
-        class="img-thumbnail"
-        src="https://emparazon.com/logoBlack.png"
-        alt="Emparazon Logo"
-        style="border: none; width: 10rem; float: left;"
-        />
-      </div>
-      <div class="col-6 text-center" style="color:#d16800">
-        <h3>Hesaplama Aracı</h3>
-      </div>
-      <div class="col">
-        
-      </div>
-      </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin:0px;
+          padding:0px;
+          box-sizing: border-box; 
+        }
+        .container{
+            width: 35rem;
+            height: 15rem;
+            border: 1px solid;
+            display:flex;
+        }
+        .calculator{
+            width: 25rem;
+            background-color: rgba(139, 139, 189, 0.1);
+        }
+       .input{
+            width: 100px;
+            margin-right: 10px;
+        }
+        #fba{   
+            margin-right: 3rem;
+        }
+        .inputblock, #fbmFba, #fees, #margs{
+            position: relative;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+        #sellingPrice2, #productCost2{
+            position: absolute;
+            right: 1rem;
+        }
+        #fee2, #marg2{
+            position: absolute;
+            right: 3rem;
+        }
+        #fee1, #marg1{
+            position: absolute;
+            right: 10.5rem;
+        }
+        #fba{
+            position: absolute;
+            right: 0.5rem;
+        }
+        #fbm{
+            margin-left:12rem;   
+        }
+        #sellingPrice1, #productCost1{
+            position: absolute;
+            right: 8rem;
+        }
+        h4{
+            margin-top:1rem;
+            color:rgb(29, 53, 35);
+        }
+        #dimension, #weight{
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+        #asinBlock{
+            width: 20%;
+            padding-left:1rem ;
+        }
+        .label{
+            margin-left: 2rem;
+            font-weight: 600;
+        }
+        #margs{
+            color:rgb(113, 68, 202);
+            font-size: 1.1rem;
+            font-weight: 900;
+        }
+        #fee1, #fee2{
+            color: rgb(5, 5, 5, 0.57);    
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-      <form id="quickCalcForm">
-        <div class="row mb-1">
-          <div class="col-6">
-            <label style="color:#0087b8">Satış Fiyatı </label>
-          </div>
-          <div style="display: inline-block;" class="col-6">
-            <div class="input-group form-inline">
-              <input
-                name="quickCalcPrice"
-                type="number"
-                value="${price}"
-                class="calc-inputs"
-                min="0"
-                step="0.01"
-                class="form-control form-control-sm"
-              />
-              <span class="ml-1">${currencySign}</span>
+        <div class="calculator">
+            <div id="fbmFba">
+                <span id="fbm">FBM</span> <span id="fba">FBA</span>
+                
             </div>
-          </div>
-        </div>
-        <div class="row mb-1">
-          <div style="display: inline-block;"class="col-6">
-            <label style="color:#0087b8">Ürün Maliyeti</label>
-          </div>
-          <div style="display: inline-block;" class="col-6">
-            <div class="input-group form-inline">
-              <input
-                name="quickCalcUmc"
-                type="number"
-                value="${umc}"
-                class="calc-inputs"
-                min="0"
-                step="0.01"
-                class="form-control form-control-sm"
-              /><span class="ml-1">${currencySign}</span>
+
+            <div class="inputblock">
+                <span class="label">Satış Fiyatı($)</span>
+                <input min=0 step=0.01 class="input" id="sellingPrice1" type="number">
+                <input min=0 step=0.01 class="input" id="sellingPrice2" type="number">
             </div>
-          </div>
-        </div>
-      </form>
 
-      <form id="quickCalcForm">
-        <div class="row mb-1">
-          <div class="col-6">
-            <label style="color:#0087b8">Satış Fiyatı </label>
-          </div>
-          <div style="display: inline-block;" class="col-6">
-            <div class="input-group form-inline">
-              <input
-                name="quickCalcPrice"
-                type="number"
-                value="${price}"
-                class="calc-inputs"
-                min="0"
-                step="0.01"
-                class="form-control form-control-sm"
-              />
-              <span class="ml-1">${currencySign}</span>
+            <div class="inputblock">
+                <span class="label">Ürün Maliyeti($)</span> 
+                <input min=0 step=0.01 class="input" id="productCost1" type="number"> 
+                <input min=0 step=0.01 class="input" id="productCost2" type="number">
             </div>
-          </div>
-          <div style="display: inline-block;" class="input-group form-inline">
-            <input
-              name="quickCalcUmc"
-              type="number"
-              value="${umc}"
-              class="calc-inputs"
-              min="0"
-              step="0.01"
-              class="form-control form-control-sm"
-            /><span class="ml-1">${currencySign}</span>
-          </div>
+
+            <div id="fees">
+                <span class="label">Ücretler($)</span> <span id="fee1">$7.52</span> <span id="fee2">$12.87</span>
+            </div>
+
+            <div id="margs">
+                <span class="label">Net Kâr($)</span> <span id="marg1">$36.70</span> <span id="marg2">$31.35</span>
+            </div>
+
         </div>
-        <div class="row mb-1">
-          <div class="col-6">
-            <label display="inline" style="color:#0087b8">Ürün Maliyeti</label>
-          </div>
-          <div class="col-6">
-            
-          </div>
+
+        <div id="asinBlock">
+            <h4>ASIN: B010RWCZN0</h4>
+            <div id="dimension"><span>Package Dimensions: 2.40 x 10.00 x 6.70 in</span></div>
+            <div id="weight"><span>Package Weight: 0.90 lb</span></div>
         </div>
-      </form>
-
-
-
-
-
-
-      <div class="row mb-1 shadow-none border-bottom border-bottom-secondary">
-        <div class="col-6">
-          <label style="color:#0087b8">Amazon Kesintileri</label>
-        </div>
-        <div id="quickCalcTotalCosts" class="col-6"></div>
-      </div>
-      <div class="row mb-1 shadow-none border-bottom border-bottom-secondary">
-        <div class="col-6">
-          <label style="color:#d16800"> NET KAR</label>
-        </div>
-        <div id="quickCalcNetRevenue" class="col-6"></div>
-      </div>
     </div>
-  </div>
-  </body>
-  </html>
+</body>
+</html>
