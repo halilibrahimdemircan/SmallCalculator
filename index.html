@@ -1,4 +1,14 @@
-<div
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+    <div
     class="card align-middle"
     id="quickCalculatorModal"
     style="max-width: ${leftColPos.width}px;margin-top: 4.5rem;"
@@ -8,7 +18,7 @@
       <div class="col">
         <img
         class="img-thumbnail"
-        src="${logoBlack}"
+        src="https://emparazon.com/logoBlack.png"
         alt="Emparazon Logo"
         style="border: none; width: 10rem; float: left;"
         />
@@ -27,7 +37,7 @@
           <div class="col-6">
             <label style="color:#0087b8">Satış Fiyatı </label>
           </div>
-          <div class="col-6">
+          <div style="display: inline-block;" class="col-6">
             <div class="input-group form-inline">
               <input
                 name="quickCalcPrice"
@@ -43,10 +53,10 @@
           </div>
         </div>
         <div class="row mb-1">
-          <div class="col-6">
+          <div style="display: inline-block;"class="col-6">
             <label style="color:#0087b8">Ürün Maliyeti</label>
           </div>
-          <div class="col-6">
+          <div style="display: inline-block;" class="col-6">
             <div class="input-group form-inline">
               <input
                 name="quickCalcUmc"
@@ -61,6 +71,53 @@
           </div>
         </div>
       </form>
+
+      <form id="quickCalcForm">
+        <div class="row mb-1">
+          <div class="col-6">
+            <label style="color:#0087b8">Satış Fiyatı </label>
+          </div>
+          <div style="display: inline-block;" class="col-6">
+            <div class="input-group form-inline">
+              <input
+                name="quickCalcPrice"
+                type="number"
+                value="${price}"
+                class="calc-inputs"
+                min="0"
+                step="0.01"
+                class="form-control form-control-sm"
+              />
+              <span class="ml-1">${currencySign}</span>
+            </div>
+          </div>
+          <div style="display: inline-block;" class="input-group form-inline">
+            <input
+              name="quickCalcUmc"
+              type="number"
+              value="${umc}"
+              class="calc-inputs"
+              min="0"
+              step="0.01"
+              class="form-control form-control-sm"
+            /><span class="ml-1">${currencySign}</span>
+          </div>
+        </div>
+        <div class="row mb-1">
+          <div class="col-6">
+            <label display="inline" style="color:#0087b8">Ürün Maliyeti</label>
+          </div>
+          <div class="col-6">
+            
+          </div>
+        </div>
+      </form>
+
+
+
+
+
+
       <div class="row mb-1 shadow-none border-bottom border-bottom-secondary">
         <div class="col-6">
           <label style="color:#0087b8">Amazon Kesintileri</label>
@@ -75,3 +132,5 @@
       </div>
     </div>
   </div>
+  </body>
+  </html>

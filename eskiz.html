@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          margin:0px;
+          padding:0px;
+          box-sizing: border-box;  
+          /* border:0.5px solid; */
+          
+        }
+        .container{
+            height: 15rem;
+            border: 1px solid;
+            display:flex;
+            
+        }
+        .calculator{
+            width: 30rem;
+        }
+       .input{
+            width: 100px;
+            margin-right: 10px;
+        }
+        #sellingPrice2, #productCost2{
+            
+        }
+        #fba,#fbm{
+            
+            margin-right: 3rem;
+        }
+        .inputblock, #fbmFba, #fees, #margs{
+            position: relative;
+        }
+        #sellingPrice2, #productCost2{
+            position: absolute;
+            right: 1rem;
+        }
+        #fee2, #marg2{
+            position: absolute;
+            right: 3rem;
+        }
+        #fee1, #marg1{
+            position: absolute;
+            right: 10.5rem;
+        }
+        #fba{
+            position: absolute;
+            right: 0.5rem;
+        }
+        #fbm{
+            margin-left:17rem;
+            
+        }
+        #sellingPrice1, #productCost1{
+            position: absolute;
+            right: 8rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div id="fbmFba">
+                <span id="fbm">FBM</span> <span id="fba">FBA</span>
+                
+            </div>
+
+            <div class="inputblock">
+                <span>Satış Fiyatı</span>
+                <input class="input" id="sellingPrice1" type="number">
+                <input class="input" id="sellingPrice2" type="number">
+            </div>
+
+            <div class="inputblock">
+                <span>Ürün Maliyeti</span> 
+                <input class="input" id="productCost1" type="number"> 
+                <input class="input" id="productCost2" type="number">
+            </div>
+
+            <div id="fees">
+                <span>Ücretler</span> <span id="fee1">$7.52</span> <span id="fee2">$12.87</span>
+            </div>
+
+            <div id="margs">
+                <span>Net Kâr</span> <span id="marg1">$36.70</span> <span id="marg2">$31.35</span>
+            </div>
+
+        </div>
+
+        <div class="asinBlock">
+            <h3>ASIN: B010RWCZN0</h3>
+            <div><span>Package Dimensions: 2.40 x 10.00 x 6.70 in</span></div>
+            <div><span>Package Weight: 0.90 lb</span></div>
+        </div>
+    </div>
+</body>
+</html>
